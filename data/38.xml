@@ -1,0 +1,26 @@
+<annotation>
+	<folder>formula-1</folder>
+	<filename>38.jpg</filename>
+	<path>/home/andrew/Desktop/formula-1/38.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>623</width>
+		<height>415</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>race car</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>181</xmin>
+			<ymin>204</ymin>
+			<xmax>421</xmax>
+			<ymax>318</ymax>
+		</bndbox>
+	</object>
+</annotation>
