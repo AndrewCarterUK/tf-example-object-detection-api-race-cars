@@ -3,7 +3,6 @@ import os
 import tensorflow as tf
 from PIL import Image
 from utils import label_map_util
-from utils import visualization_utils as vis_util
 from pascal_voc_writer import Writer
 
 if tf.__version__ < '1.4.0':
@@ -77,19 +76,3 @@ with detection_graph.as_default():
 
       annotation_path = os.path.splitext(image_path)[0] + '.xml'
       writer.save(annotation_path)
-
-      # Visualization of the results of a detection.
-      vis_util.visualize_boxes_and_labels_on_image_array(
-          image_np,
-          boxes,
-          classes.astype(np.int32),
-          scores,
-          category_index,
-          min_score_thresh=.2,
-          use_normalized_coordinates=True,
-          line_thickness=8)
-
-      output_image_path = os.path.splitext(image_path)[0] + '-boxes.jpg'
-      output_image = Image.fromarray(image_np)
-      output_image.save(output_image_path)
-
