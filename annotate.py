@@ -11,6 +11,8 @@ if tf.__version__ < '1.4.0':
 PATH_TO_CKPT = 'inference/frozen_inference_graph.pb'
 PATH_TO_LABELS = 'data/map.pbtxt'
 
+TOTAL_IMAGES = 10 #Edit this number to the numbers of images you have.
+
 NUM_CLASSES = 1
 
 detection_graph = tf.Graph()
@@ -31,7 +33,7 @@ def load_image_into_numpy_array(image):
       (im_height, im_width, 3)).astype(np.uint8)
 
 PATH_TO_TEST_IMAGES_DIR = 'test'
-TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, '{}.jpg'.format(i)) for i in [1,2,3,4] ]
+TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, '{}.jpg'.format(i)) for i in range(1,TOTAL_IMAGES) ]
 
 with detection_graph.as_default():
   with tf.Session(graph=detection_graph) as sess:
